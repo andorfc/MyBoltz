@@ -102,38 +102,8 @@ mkdir ./final_cif/
 find ./outputs/protein_Zm00001eb361090_P002_run0/ -type f -name "*_model_0.cif" -exec cp {} ./final_cif/ \; &
 ```
 
-
-
 ---
 
-## 📁 Notes
-
-- Ensure your `.fa` and `.pdb` input files are correct and properly formatted.
-- Slurm job scripts should:
-  - Request an appropriate GPU (e.g., `--gres=gpu:a100:1`)
-  - Activate the correct conda environment
-  - Set environment variables if needed (e.g., `TRANSFORMERS_CACHE`, `HF_HOME`)
-- Adjust the `CHUNK_SIZE`, time, and memory limits based on the protein size and model.
-
----
-
-## ✅ Tips
-
-- Use `conda env export > environment.yml` to record your environment.
-- Monitor jobs with:
-
-```bash
-squeue -u $USER
-tail -f slurm-<jobid>.out
-```
-
-- Convert Slurm jobs to arrays if processing multiple proteins:
-
-```bash
-#SBATCH --array=0-99
-```
-
----
 
 ## 📚 References
 
