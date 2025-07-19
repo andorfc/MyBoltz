@@ -17,6 +17,7 @@ module load cuda
 # Create and activate environment
 conda create -n myboltz2 python=3.12 -y
 source activate myboltz2
+```
 
 ## ⚛️ Boltz-2: Protein Structure Prediction
 
