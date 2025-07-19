@@ -85,6 +85,9 @@ sbatch my_boltz_design_array_L40S.sh Zm00001eb361090_P002 ./maize/PDB/Zm00001eb3
 ```
 
 ### 3. Results
+
+It can take 40 - 60 minutes per binder, per node.
+
 The statistics of the binders will be found in the folder:
 
 ```bash
