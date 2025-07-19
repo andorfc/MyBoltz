@@ -42,7 +42,12 @@ source ~/.bashrc
 sbatch my_boltz2_single_protein_L40S.sh ./fasta/Zm00001eb361090_P002.fa ./maize/
 ```
 
-> 📝 Make sure your `my_boltz2_single_protein_L40S.sh` Slurm script is properly configured to load the environment and request GPU resources.
+### 3. Results
+The final PDB will be in folder:
+
+```bash
+./maize/PDB/
+```
 
 ---
 
@@ -78,6 +83,26 @@ conda activate boltz_design
 # Example: run BoltzDesign using an input PDB
 sbatch my_boltz_design_array_L40S.sh Zm00001eb361090_P002 ./maize/PDB/Zm00001eb361090_P002_model_0.pdb
 ```
+
+### 3. Results
+The statistics of the binders will be found in the folder:
+
+```bash
+./outputs/protein_Zm00001eb361090_P002_run0/results_final/rmsd_results.csv
+```
+
+The structure of the binder will be in a folder like:
+
+```bash
+./outputs/protein_Zm00001eb361090_P002_run0/results_final/boltz_results_Zm00001eb361090_P002_results_itr1_length77/predictions/Zm00001eb361090_P002_results_itr1_length77/Zm00001eb361090_P002_results_itr1_length77_model_0.cif
+```
+To move all the CIF files to a single location use command:
+```bash
+mkdir ./final_cif/
+find ./outputs/protein_Zm00001eb361090_P002_run0/ -type f -name "*_model_0.cif" -exec cp {} ./final_cif/ \; &
+```
+
+
 
 ---
 
